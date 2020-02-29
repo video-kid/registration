@@ -1,8 +1,13 @@
 import React from "react";
 import "./css/style.css";
+import Register from "./components/Register";
 
 function App() {
-  return <div className="App">blabla</div>;
+  return (
+    <main className="App">
+      <Register type="register"></Register>
+    </main>
+  );
 }
 
 export default App;
