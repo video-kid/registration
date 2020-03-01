@@ -47,7 +47,7 @@ const validationHandler = form => {
   }
 };
 
-function Register(props) {
+const Register = props => {
   const [error, setError] = React.useState(null);
   const [form, setForm] = React.useState({
     login: "",
@@ -63,6 +63,8 @@ function Register(props) {
       setError(errorMsg);
       return;
     }
+    //form to send
+    console.log(form);
   };
 
   const inputHandler = e => {
@@ -73,7 +75,7 @@ function Register(props) {
   };
 
   return (
-    <div>
+    <div className="formWrapper">
       <span className="errInfoField">{error}</span>
       <h2>{props.type}</h2>
       <form className="form" onSubmit={submitManager}>
@@ -125,6 +127,6 @@ function Register(props) {
       </form>
     </div>
   );
-}
+};
 
 export default Register;
