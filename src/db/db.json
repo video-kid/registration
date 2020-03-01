@@ -3,14 +3,12 @@
     "id": 0,
     "login": "blabgur",
     "email": "blabgur@example.xom",
-    "password": "111111",
-    "repPassword": "111111"
+    "password": "111111"
   },
   {
     "id": 1,
     "login": "pajonk",
     "email": "pajonk@example.xom",
-    "password": "111111",
-    "repPassword": "111111"
+    "password": "111111"
   }
 ]

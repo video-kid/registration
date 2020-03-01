@@ -7,12 +7,11 @@ const Login = props => {
     password: ""
   });
 
-  const submitManager = e => {
+  const submitManager = async e => {
     e.preventDefault();
-    //data from login form
-    console.log(form);
-    //data from 'db'
-    console.log(Data("bla", "bla"));
+    if (form.login) {
+      console.log(await Data(form.login, form.password));
+    }
   };
 
   const inputHandler = e => {
