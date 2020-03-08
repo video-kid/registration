@@ -9,8 +9,9 @@ const Login = props => {
 
   const submitManager = async e => {
     e.preventDefault();
+    Data.initialize();
     if (form.login) {
-      console.log(await Data(form.login, form.password));
+      console.log(await Data.checkPassword(form.login, form.password));
     }
   };
 

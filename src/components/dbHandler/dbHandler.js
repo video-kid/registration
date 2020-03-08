@@ -1,32 +1,36 @@
 import React from "react";
 
-const Data = async (login, password) => {
-  const dbUrl = "http://localhost:5500/src/db/db.json";
+const Data = {
+  dbUrl: "http://localhost:5500/src/db/db.json",
 
-  const dbConnector = async () => {
-    let resp = await fetch(dbUrl);
+  dbConnector: async function() {
+    let resp = await fetch(this.dbUrl);
     let data = await resp.json();
     return data;
-  };
+  },
 
-  dbConnector();
+  initialize: function() {
+    return this.dbConnector();
+  },
 
-  const findMatches = async (fieldName, phrase) => {
-    let base = await dbConnector();
+  findMatches: async function(fieldName, phrase) {
+    let base = await this.dbConnector();
 
     let findObjectsArr = base.filter(obj => {
       return obj[fieldName] === phrase;
     });
 
     return findObjectsArr;
-  };
+  },
 
-  const getFirst = arr => {
+  getFirst: function(arr) {
     return arr[0];
-  };
+  },
 
-  const checkPassword = async () => {
-    let checkedObj = await getFirst(await findMatches("login", login));
+  checkPassword: async function(login, password) {
+    let checkedObj = await this.getFirst(
+      await this.findMatches("login", login)
+    );
     if (await checkedObj) {
       if (password) {
         if ((await checkedObj.password) === password) {
@@ -36,10 +40,7 @@ const Data = async (login, password) => {
     }
 
     return "check login and pw again";
-    // return false;
-  };
-
-  return await checkPassword();
+  }
 };
 
 export default Data;
