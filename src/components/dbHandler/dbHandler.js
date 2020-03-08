@@ -11,27 +11,30 @@ const Data = async (login, password) => {
 
   dbConnector();
 
-  const findFirstObject = async () => {
+  const findMatches = async (fieldName, phrase) => {
     let base = await dbConnector();
-    let curObj = {};
 
     let findObjectsArr = base.filter(obj => {
-      return obj.login === login;
+      return obj[fieldName] === phrase;
     });
 
-    if (findObjectsArr.length > 0) {
-      curObj = findObjectsArr[0];
-    }
-    return curObj;
+    return findObjectsArr;
+  };
+
+  const getFirst = arr => {
+    return arr[0];
   };
 
   const checkPassword = async () => {
-    let checkedObj = await findFirstObject();
-    if ((await checkedObj) && password) {
-      if ((await checkedObj.password) === password) {
-        return await checkedObj.login;
+    let checkedObj = await getFirst(await findMatches("login", login));
+    if (await checkedObj) {
+      if (password) {
+        if ((await checkedObj.password) === password) {
+          return await checkedObj.login;
+        }
       }
     }
+
     return "check login and pw again";
     // return false;
   };
