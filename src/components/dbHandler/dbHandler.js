@@ -1,5 +1,3 @@
-import React from "react";
-
 const Data = {
   DataBase: {
     url: "http://localhost:5500/src/db",
