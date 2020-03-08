@@ -2,6 +2,7 @@ import React from "react";
 import Data from "./dbHandler/dbHandler.js";
 
 const Login = props => {
+  const [error, setError] = React.useState(null);
   const [form, setForm] = React.useState({
     login: "",
     password: ""
@@ -33,13 +34,13 @@ const Login = props => {
       }
     }
 
-    return "check login and pw again";
+    return setError("check login and pw again");
   };
 
   const submitManager = async e => {
     e.preventDefault();
     if (form.login) {
-      console.log(await loginHandler(form.login, form.password));
+      await loginHandler(form.login, form.password);
     }
   };
 
@@ -52,6 +53,7 @@ const Login = props => {
 
   return (
     <div className="formWrapper">
+      <span className="errInfoField">{error}</span>
       <h2>{props.type}</h2>
       <form className="form" onSubmit={submitManager}>
         <div className="form-row">
