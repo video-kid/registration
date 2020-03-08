@@ -6,8 +6,6 @@ const Home = props => {
   const [activeTab, setActiveTab] = React.useState(false);
   const handleClick = e => {
     e.preventDefault();
-    let currentSelection = e.target.getAttribute("aria-controls");
-    //console.log(e.target.getAttribute("aria-controls"));
     setActiveTab(!activeTab);
   };
   return (
