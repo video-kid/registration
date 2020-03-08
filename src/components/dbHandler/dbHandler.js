@@ -1,20 +1,29 @@
 import React from "react";
 
 const Data = {
-  dbUrl: "http://localhost:5500/src/db/db.json",
+  DataBase: {
+    url: "http://localhost:5500/src/db",
+    structure: {
+      users: "users.json",
+      passwords: "passwords.json"
+    },
+    getTable: async function(table) {
+      return await `${this.url}/${this.structure[table]}`;
+    }
+  },
 
-  dbConnector: async function() {
-    let resp = await fetch(this.dbUrl);
+  dbConnector: async function(dbName) {
+    let resp = await fetch(dbName);
     let data = await resp.json();
     return data;
   },
 
-  initialize: function() {
-    return this.dbConnector();
+  useTable: async function(tableName) {
+    return await this.DataBase.getTable(tableName);
   },
 
-  findMatches: async function(fieldName, phrase) {
-    let base = await this.dbConnector();
+  findMatches: async function(dbName, fieldName, phrase) {
+    let base = await this.dbConnector(dbName);
 
     let findObjectsArr = base.filter(obj => {
       return obj[fieldName] === phrase;
@@ -27,19 +36,8 @@ const Data = {
     return arr[0];
   },
 
-  checkPassword: async function(login, password) {
-    let checkedObj = await this.getFirst(
-      await this.findMatches("login", login)
-    );
-    if (await checkedObj) {
-      if (password) {
-        if ((await checkedObj.password) === password) {
-          return await checkedObj.login;
-        }
-      }
-    }
-
-    return "check login and pw again";
+  findUserId: async function(object) {
+    return await object.id;
   }
 };
 

@@ -7,11 +7,39 @@ const Login = props => {
     password: ""
   });
 
+  const checkPassword = async (userObj, submittedPassword) => {
+    let pswdObj = await Data.findMatches(
+      await Data.useTable("passwords"),
+      "id",
+      await Data.findUserId(userObj)
+    );
+    if (
+      (await pswdObj.length) === 1 &&
+      (await pswdObj[0].password) === submittedPassword
+    ) {
+      return await userObj;
+    }
+  };
+
+  const loginHandler = async (login, password) => {
+    let checkedObj = await Data.getFirst(
+      await Data.findMatches(await Data.useTable("users"), "login", login)
+    );
+
+    if (await checkedObj) {
+      let accountToLogIn = await checkPassword(checkedObj, password);
+      if (accountToLogIn) {
+        return accountToLogIn;
+      }
+    }
+
+    return "check login and pw again";
+  };
+
   const submitManager = async e => {
     e.preventDefault();
-    Data.initialize();
     if (form.login) {
-      console.log(await Data.checkPassword(form.login, form.password));
+      console.log(await loginHandler(form.login, form.password));
     }
   };
 
