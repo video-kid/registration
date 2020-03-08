@@ -1,0 +1,29 @@
+.homepage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  &-form {
+    width: 350px;
+  }
+}
+
+.homepage-form {
+  display: flex;
+  flex-direction: column;
+  .navbar {
+    display: contents;
+  }
+  .btn[aria-controls="login"],
+  #login {
+    order: 1;
+  }
+}
+
+.formWrapper {
+  height: 0;
+  overflow: hidden;
+  &.active {
+    height: 100%;
+  }
+}
