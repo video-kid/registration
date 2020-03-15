@@ -14,7 +14,9 @@ const Home = props => {
         <div className="btn-container navbar">
           <button
             onClick={handleClick}
-            className="btn tab nav-item"
+            className={`btn tab register navbar-item ${
+              !activeTab ? "active" : ""
+            }`}
             data-toggle="tab"
             aria-controls="register"
           >
@@ -22,7 +24,7 @@ const Home = props => {
           </button>
           <button
             onClick={handleClick}
-            className="btn tab nav-item"
+            className={`btn tab login navbar-item ${activeTab ? "active" : ""}`}
             data-toggle="tab"
             aria-controls="login"
           >
@@ -30,12 +32,12 @@ const Home = props => {
           </button>
         </div>
         <Register
-          className="formWrapper"
+          className="formWrapper register"
           type="register"
           isActive={!activeTab}
         ></Register>
         <Login
-          className="formWrapper"
+          className="formWrapper login"
           type="login"
           isActive={activeTab}
         ></Login>

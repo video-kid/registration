@@ -8,6 +8,12 @@
     .label,
     .input {
       display: block;
+      color: inherit;
+      background-color: transparent;
+      padding: 0 3px;
+      &:focus {
+        background-color: transparent;
+      }
     }
   }
 }

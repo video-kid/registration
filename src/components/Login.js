@@ -59,7 +59,6 @@ const Login = props => {
   return (
     <div id={props.type} className={classList} role="tabpanel">
       <span className="errInfoField">{error}</span>
-      <h2>{props.type}</h2>
       <form className="form" onSubmit={submitManager}>
         <div className="form-row">
           <input
@@ -83,7 +82,7 @@ const Login = props => {
             haslo
           </label>
         </div>
-        <button className="btn">Submit</button>
+        <button className="btn btn-action">Submit</button>
       </form>
     </div>
   );
