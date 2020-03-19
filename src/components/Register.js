@@ -49,9 +49,7 @@ const validationHandler = form => {
 
 const Register = props => {
   let classList = `${props.className}`;
-  if (props.isActive) {
-    classList = `${props.className} active`;
-  }
+
   const [error, setError] = React.useState(null);
   const [form, setForm] = React.useState({
     login: "",
@@ -126,7 +124,7 @@ const Register = props => {
             powtorz haslo
           </label>
         </div>
-        <button className="btn btn-action">Submit</button>
+        <button className="btn">Submit</button>
       </form>
     </div>
   );

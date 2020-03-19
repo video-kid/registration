@@ -3,9 +3,6 @@ import Data from "./dbHandler/dbHandler.js";
 
 const Login = props => {
   let classList = `${props.className}`;
-  if (props.isActive) {
-    classList = `${props.className} active`;
-  }
 
   const [error, setError] = React.useState(null);
   const [form, setForm] = React.useState({
@@ -82,7 +79,7 @@ const Login = props => {
             haslo
           </label>
         </div>
-        <button className="btn btn-action">Submit</button>
+        <button className="btn">Submit</button>
       </form>
     </div>
   );

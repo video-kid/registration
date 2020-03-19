@@ -1,7 +1,42 @@
-$color-primary: #673ab7;
-$color-primary-light: #9a67ea;
-$color-primary-dark: #320b86;
+// colors:
 
-$white: #fffde7;
+$light: #fefff1;
+$dark: #6f88fc;
+$accent-light: #45e3ff;
+$accent-dark: #a163f7;
+
+$color-primary: $dark;
+$color-primary-light: $accent-light;
+$color-primary-dark: $accent-dark;
+
+$white: $light;
 
 $font-color: $white;
+
+// gradient colors:
+
+$gd-darker: #c22ed0;
+$gd-lighter: #5ffae0;
+
+$bcg-gradient: linear-gradient(135deg, $gd-darker 0%, $gd-lighter 100%);
+
+// shadows
+
+$shadow: 4px 4px 35px -10px rgba(
+    $color: $accent-dark,
+    $alpha: 0.7
+  );
+
+// measuers
+
+$basic-measure: 20px;
+$big-measue: $basic-measure * 1.5;
+$std-margin: $basic-measure;
+
+$tab-height: $big-measue + $std-margin + $std-margin;
+
+// fonts sizes
+$card-header: $basic-measure;
+
+// other
+$rounded: $basic-measure;
