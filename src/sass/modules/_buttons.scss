@@ -1,0 +1,9 @@
+.btn {
+  $btn-size: 20px;
+  text-transform: capitalize;
+  font-size: $btn-size;
+  line-height: $btn-size;
+  letter-spacing: 2px;
+  font-weight: bold;
+  padding: $btn-size $btn-size * 2;
+}
