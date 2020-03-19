@@ -1,15 +1,10 @@
 // colors:
 
-$light: #fefff1;
-$dark: #6f88fc;
-$accent-light: #45e3ff;
-$accent-dark: #a163f7;
+$color-primary: #6f88fc;
+$color-primary-light: #45e3ff;
+$color-primary-dark: #a163f7;
 
-$color-primary: $dark;
-$color-primary-light: $accent-light;
-$color-primary-dark: $accent-dark;
-
-$white: $light;
+$white: #fefff1;
 
 $font-color: $white;
 
@@ -23,7 +18,7 @@ $bcg-gradient: linear-gradient(135deg, $gd-darker 0%, $gd-lighter 100%);
 // shadows
 
 $shadow: 4px 4px 35px -10px rgba(
-    $color: $accent-dark,
+    $color: $color-primary-dark,
     $alpha: 0.7
   );
 
