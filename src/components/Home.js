@@ -9,31 +9,34 @@ const Home = props => {
     setActiveTab(!activeTab);
   };
   return (
-    <div className="card">
-      <div className="btn-container navbar">
-        <button
-          onClick={handleClick}
-          className="btn tab nav-item"
-          data-toggle="tab"
-          aria-controls="register"
-        >
-          register
-        </button>
-        <button
-          onClick={handleClick}
-          className="btn tab nav-item"
-          data-toggle="tab"
-          aria-controls="login"
-        >
-          login
-        </button>
+    <div className="modal-container">
+      <div className="modal roundy">
+        <ul className="cards-list dropdown">
+          <li className={`card roundy ${!activeTab ? "active" : ""}`}>
+            <button
+              onClick={handleClick}
+              className={`btn tab`}
+              data-toggle="tab"
+              aria-controls="register"
+            >
+              register
+            </button>
+            <Register className="content" type="register"></Register>
+          </li>
+          <li className={`card roundy dark ${activeTab ? "active" : ""}`}>
+            <button
+              onClick={handleClick}
+              className={`btn tab`}
+              data-toggle="tab"
+              aria-controls="login"
+            >
+              login
+            </button>
+
+            <Login className="content" type="login"></Login>
+          </li>
+        </ul>
       </div>
-      <Register
-        className="formWrapper"
-        type="register"
-        isActive={!activeTab}
-      ></Register>
-      <Login className="formWrapper" type="login" isActive={activeTab}></Login>
     </div>
   );
 };

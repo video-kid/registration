@@ -3,9 +3,6 @@ import Data from "./dbHandler/dbHandler.js";
 
 const Login = props => {
   let classList = `${props.className}`;
-  if (props.isActive) {
-    classList = `${props.className} active`;
-  }
 
   const [error, setError] = React.useState(null);
   const [form, setForm] = React.useState({
@@ -59,7 +56,6 @@ const Login = props => {
   return (
     <div id={props.type} className={classList} role="tabpanel">
       <span className="errInfoField">{error}</span>
-      <h2>{props.type}</h2>
       <form className="form" onSubmit={submitManager}>
         <div className="form-row">
           <input

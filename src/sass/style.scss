@@ -1,5 +1,9 @@
-@import "globals/_globals";
 @import "var/_var";
+@import "globals/_globals";
+@import "globals/_reset";
 @import "layout/_header";
 @import "layout/_main";
 @import "layout/_footer";
+@import "modules/_buttons";
+@import "modules/_form";
+@import "modules/_modal";

@@ -1,0 +1,14 @@
+body {
+  @import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
+  min-height: 100vh;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+}
+
+button {
+  background-color: transparent;
+  display: block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: inherit;
+}
