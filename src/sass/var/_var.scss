@@ -1,17 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Chivo:400,900|Overpass&display=swap");
+
 // colors:
 
-$color-primary: #6f88fc;
-$color-primary-light: #45e3ff;
-$color-primary-dark: #a163f7;
+$color-basic: #ddd8c4;
 
-$white: #fefff1;
+$color-primary-dark: #3b3759;
+$color-primary: #759aab;
+$color-primary-light: #d6edff;
+
+$color-secondary-dark: #9b6a6c;
+$color-secondary: #d3c1c3;
+$color-secondary-light: #eee4e1;
+
+$color-accent: #4e937a;
+$color-accent-dark: #357266;
+
+$white: #fffcf2;
+$black: #252422;
 
 $font-color: $white;
 
 // gradient colors:
 
-$gd-darker: #c22ed0;
-$gd-lighter: #5ffae0;
+$gd-darker: #aa5377;
+$gd-lighter: #ffb565;
 
 $bcg-gradient: linear-gradient(135deg, $gd-darker 0%, $gd-lighter 100%);
 
@@ -21,6 +33,11 @@ $shadow: 4px 4px 35px -10px rgba(
     $color: $color-primary-dark,
     $alpha: 0.7
   );
+
+// fonts
+
+$font-basic: "Overpass", sans-serif;
+$font-special: "Chivo", sans-serif;
 
 // measuers
 
@@ -34,4 +51,4 @@ $tab-height: $big-measue + $std-margin + $std-margin;
 $card-header: $basic-measure;
 
 // other
-$rounded: $basic-measure;
+$rounded: 30px;

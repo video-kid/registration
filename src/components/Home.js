@@ -23,7 +23,7 @@ const Home = props => {
             </button>
             <Register className="content" type="register"></Register>
           </li>
-          <li className={`card roundy dark ${activeTab ? "active" : ""}`}>
+          <li className={`card roundy light ${activeTab ? "active" : ""}`}>
             <button
               onClick={handleClick}
               className={`btn tab`}

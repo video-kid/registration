@@ -78,8 +78,8 @@ const Register = props => {
 
   return (
     <div id={props.type} className={classList} role="tabpanel">
-      <span className="errInfoField">{error}</span>
       <form className="form" onSubmit={submitManager}>
+        <span className="errInfoField">{error}</span>
         <div className="form-row">
           <input
             type="text"
