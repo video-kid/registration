@@ -21,9 +21,14 @@
   box-shadow: $shadow;
   overflow: hidden;
   @media (min-width: 679px) {
-    background-color: transparent;
+    background-color: rgba($color-secondary-light, 0);
     box-shadow: none;
-    width: auto;
+    width: 80%;
+    width: 70%;
+    color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .dropdown {
@@ -33,6 +38,7 @@
     @media (min-width: 679px) {
       flex-direction: row;
       flex-wrap: wrap;
+      width: 100%;
     }
 
     .card {
@@ -66,13 +72,16 @@
           flex: 45%;
           flex-grow: 1;
           border-radius: 10px 10px 0 0;
-          background-color: $color-primary-dark;
+          position: relative;
+          bottom: -1px;
         }
       }
 
       > .content {
-        padding: $std-margin;
         height: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
         @media (min-width: 679px) {
           padding: 0;
           flex-basis: 100%;
@@ -87,29 +96,33 @@
         background-color: $color-secondary-light;
         color: $black;
         @media (min-width: 679px) {
-          background-color: inherit;
-          color: inherit;
+          //background-color: inherit;
         }
       }
 
       &.active {
         height: 100%;
         @media (min-width: 679px) {
-          .tab,
+          .tab {
+            background-color: $color-secondary-light;
+          }
           .content {
             background-color: $color-secondary-light;
-            color: $black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: initial;
+            background: linear-gradient(
+              to bottom,
+              rgba($color-secondary-light, 1) 0%,
+              rgba($color-secondary-light, 0) 100%
+            );
           }
         }
 
         .content {
+          opacity: 1;
           height: calc(100% - 70px);
-          @media (min-width: 679px) {
-            padding: $std-margin;
-            display: flex;
-            align-items: stretch;
-            justify-content: center;
-          }
         }
       }
     }
