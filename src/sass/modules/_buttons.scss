@@ -6,4 +6,46 @@
   letter-spacing: 2px;
   font-weight: bold;
   padding: $btn-size $btn-size * 2;
+  border-radius: 10px;
 }
+
+.form {
+  .btn {
+    $btn-size: 16px;
+    margin: 40px auto 0 auto;
+    border: 1px solid currentColor;
+    padding: $btn-size $btn-size * 2;
+    font-size: $btn-size;
+    line-height: $btn-size;
+  }
+}
+
+/*.btn-gradient {
+  position: relative;
+  color: $white;
+  border: none;
+  //z-index: 2;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+  }
+  &:before {
+    background: linear-gradient(135deg, $gd-darker 0%, $gd-lighter 100%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    //z-index: 0;
+  }
+  &:after {
+    //background: $white;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    //z-index: 1;
+  }
+}
+*/

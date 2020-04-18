@@ -8,8 +8,11 @@ const Home = props => {
     e.preventDefault();
     setActiveTab(!activeTab);
   };
+  const isLogged = props.isLogged;
+  const logInHandler = props.logInHandler;
   return (
     <div className="modal-container">
+      <p>{isLogged ? "yiss" : "nope"}</p>
       <div className="modal roundy">
         <ul className="cards-list dropdown">
           <li className={`card roundy ${!activeTab ? "active" : ""}`}>
@@ -33,7 +36,11 @@ const Home = props => {
               login
             </button>
 
-            <Login className="content" type="login"></Login>
+            <Login
+              className="content"
+              type="login"
+              logInHandler={logInHandler}
+            ></Login>
           </li>
         </ul>
       </div>

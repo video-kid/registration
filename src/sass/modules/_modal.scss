@@ -7,8 +7,8 @@
 
   .roundy {
     border-radius: $rounded;
-    @media (min-width: 679px) {
-      border-radius: 0 0 10px 10px;
+    @media (min-width: $breakpoint-small) {
+      border-radius: 5px;
     }
   }
 }
@@ -20,27 +20,25 @@
   color: $white;
   box-shadow: $shadow;
   overflow: hidden;
-  @media (min-width: 679px) {
-    background-color: rgba($color-secondary-light, 0);
-    box-shadow: none;
-    width: 90%;
+  @media (min-width: $breakpoint-small) {
+    width: 60%;
     height: 90%;
     color: $black;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(
-      to bottom,
-      rgba($color-secondary-light, 1) 0%,
-      rgba($color-secondary-light, 0) 100%
-    );
+    border: double 2px transparent;
+    border-radius: 30px;
+    background-image: linear-gradient($color-basic, $color-basic), $gradient;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
   }
 
   .dropdown {
     height: 100%;
     display: flex;
     flex-direction: column;
-    @media (min-width: 679px) {
+    @media (min-width: $breakpoint-small) {
       flex-direction: row;
       flex-wrap: wrap;
       width: 50%;
@@ -51,7 +49,7 @@
       padding-bottom: 0;
       height: $tab-height;
       transition: height 0.5s ease-in;
-      @media (min-width: 679px) {
+      @media (min-width: $breakpoint-small) {
         display: contents;
         > .tab {
           margin-left: 1px;
@@ -74,7 +72,7 @@
         color: inherit;
         font-family: $font-special;
         font-weight: 400;
-        @media (min-width: 679px) {
+        @media (min-width: $breakpoint-small) {
           flex: 45%;
           flex-grow: 1;
           border-radius: 0;
@@ -86,7 +84,7 @@
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s ease-in-out;
-        @media (min-width: 679px) {
+        @media (min-width: $breakpoint-small) {
           padding: 0;
           flex-basis: 100%;
         }
@@ -99,14 +97,14 @@
       &.light {
         background-color: $color-secondary-light;
         color: $black;
-        @media (min-width: 679px) {
+        @media (min-width: $breakpoint-small) {
           //background-color: inherit;
         }
       }
 
       &.active {
         height: 100%;
-        @media (min-width: 679px) {
+        @media (min-width: $breakpoint-small) {
           .tab {
             //background-color: $color-secondary-light;
           }
@@ -126,17 +124,6 @@
           pointer-events: initial;
         }
       }
-    }
-  }
-  .form {
-    .btn {
-      $btn-size: 16px;
-      margin: 40px auto 0 auto;
-      border: 1px solid currentColor;
-      border-radius: 10px;
-      padding: $btn-size $btn-size * 2;
-      font-size: $btn-size;
-      line-height: $btn-size;
     }
   }
 }

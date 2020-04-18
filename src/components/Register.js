@@ -124,7 +124,7 @@ const Register = props => {
             powtorz haslo
           </label>
         </div>
-        <button className="btn">Submit</button>
+        <button className="btn btn-gradient">Submit</button>
       </form>
     </div>
   );

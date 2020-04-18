@@ -3,6 +3,7 @@ import Data from "./dbHandler/dbHandler.js";
 
 const Login = props => {
   let classList = `${props.className}`;
+  const loginEmmiter = props.logInHandler;
 
   const [error, setError] = React.useState(null);
   const [form, setForm] = React.useState({
@@ -32,6 +33,7 @@ const Login = props => {
     if (await checkedObj) {
       let accountToLogIn = await checkPassword(checkedObj, password);
       if (accountToLogIn) {
+        loginEmmiter();
         return accountToLogIn;
       }
     }
@@ -79,7 +81,7 @@ const Login = props => {
             haslo
           </label>
         </div>
-        <button className="btn">Submit</button>
+        <button className="btn btn-gradient">Submit</button>
       </form>
     </div>
   );

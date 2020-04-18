@@ -2,15 +2,13 @@
 
 // colors:
 
-$color-basic: #ddd8c4;
-
 $color-primary-dark: #3b3759;
 $color-primary: #759aab;
 $color-primary-light: #d6edff;
 
 $color-secondary-dark: #9b6a6c;
 $color-secondary: #d3c1c3;
-$color-secondary-light: #eee4e1;
+$color-secondary-light: #eeecec;
 
 $color-accent: #4e937a;
 $color-accent-dark: #357266;
@@ -24,8 +22,12 @@ $font-color: $white;
 
 $gd-darker: #aa5377;
 $gd-lighter: #ffb565;
+$color-basic: $color-secondary-light;
 
-$bcg-gradient: linear-gradient(135deg, $gd-darker 0%, $gd-lighter 100%);
+//gradients:
+
+$gradient: linear-gradient(135deg, $gd-darker 0%, $gd-lighter 100%);
+$bcg-gradient: $gradient;
 
 // shadows
 
@@ -52,3 +54,7 @@ $card-header: $basic-measure;
 
 // other
 $rounded: 30px;
+
+//breakpoints:
+
+$breakpoint-small: 679px;
