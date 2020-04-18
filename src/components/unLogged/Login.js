@@ -1,5 +1,5 @@
 import React from "react";
-import Data from "./dbHandler/dbHandler.js";
+import Data from "../dbHandler/dbHandler.js";
 
 const Login = props => {
   let classList = `${props.className}`;

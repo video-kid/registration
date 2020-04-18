@@ -2,17 +2,16 @@ import React from "react";
 import Register from "./Register";
 import Login from "./Login";
 
-const Home = props => {
+const Unlogged = props => {
   const [activeTab, setActiveTab] = React.useState(false);
   const handleClick = e => {
     e.preventDefault();
     setActiveTab(!activeTab);
   };
-  const isLogged = props.isLogged;
   const logInHandler = props.logInHandler;
+
   return (
     <div className="modal-container">
-      <p>{isLogged ? "yiss" : "nope"}</p>
       <div className="modal roundy">
         <ul className="cards-list dropdown">
           <li className={`card roundy ${!activeTab ? "active" : ""}`}>
@@ -48,4 +47,4 @@ const Home = props => {
   );
 };
 
-export default Home;
+export default Unlogged;
