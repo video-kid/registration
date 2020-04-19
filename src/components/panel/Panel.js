@@ -5,8 +5,9 @@ let isAdmin = async id => {
   let curAccount = await Data.findMatches(
     await Data.useTable("admins"),
     "id",
-    id
+    await Data.findUserId(id)
   );
+
   if (curAccount[0] !== undefined) {
     let { admin } = curAccount[0];
     return admin;
@@ -15,13 +16,14 @@ let isAdmin = async id => {
 
 const Panel = props => {
   const { id, login, email } = props.userData;
+  const userdata = props.userData;
   const setAdminView = props.setAdminView;
   const adminView = props.isAdmin;
 
   const [accountStatus, setAccountStatus] = useState(null);
 
   const checkAccountType = async accountId => {
-    if ((await isAdmin(accountId)) === true) {
+    if ((await isAdmin(userdata)) === true) {
       setAdminView();
       return setAccountStatus("admin");
     }

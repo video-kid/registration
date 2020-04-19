@@ -19,6 +19,8 @@ class App extends React.Component {
     };
     const logOutHandler = () => {
       this.setState({ isLogged: false });
+      this.setState({ isAdmin: false });
+      this.setState({ userData: {} });
     };
     const setAdminView = () => {
       this.setState({ isAdmin: true });
