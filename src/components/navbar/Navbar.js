@@ -2,6 +2,7 @@ import React from "react";
 
 const Navbar = props => {
   const logoutEmmiter = props.logOutHandler;
+  const userName = props.userName;
 
   return (
     <nav className="navbar">
@@ -11,7 +12,7 @@ const Navbar = props => {
         <li className="menu-elem">menu elem 3</li>
       </ul>
       <button className="btn log-out" onClick={logoutEmmiter}>
-        log Out
+        {`log Out ${userName}`}
       </button>
     </nav>
   );

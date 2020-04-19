@@ -8,7 +8,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       isLogged: false,
-      userData: {}
+      userData: {},
+      isAdmin: false
     };
   }
   render() {
@@ -18,6 +19,9 @@ class App extends React.Component {
     };
     const logOutHandler = () => {
       this.setState({ isLogged: false });
+    };
+    const setAdminView = () => {
+      this.setState({ isAdmin: true });
     };
     return (
       <Router>
@@ -29,6 +33,8 @@ class App extends React.Component {
                 logInHandler={logInHandler}
                 logOutHandler={logOutHandler}
                 userData={this.state.userData}
+                setAdminView={setAdminView}
+                isAdmin={this.state.isAdmin}
               />
             </Route>
           </Switch>

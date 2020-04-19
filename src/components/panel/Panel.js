@@ -15,16 +15,19 @@ let isAdmin = async id => {
 
 const Panel = props => {
   const { id, login, email } = props.userData;
+  const setAdminView = props.setAdminView;
+  const adminView = props.isAdmin;
 
-  const [adminStatus, setAdminStatus] = useState(null);
+  const [accountStatus, setAccountStatus] = useState(null);
 
-  const checkPrvl = async () => {
-    if ((await isAdmin(id)) === true) {
-      return setAdminStatus("true");
+  const checkAccountType = async accountId => {
+    if ((await isAdmin(accountId)) === true) {
+      setAdminView();
+      return setAccountStatus("admin");
     }
   };
 
-  checkPrvl();
+  checkAccountType(id);
 
   return (
     <div className="panel">
@@ -33,7 +36,7 @@ const Panel = props => {
         logged user: id: {id}
         login: {login}
         email: {email}
-        isAdminAcc: {adminStatus}
+        {adminView && <div>its {accountStatus} version of panel</div>}
       </div>
     </div>
   );
