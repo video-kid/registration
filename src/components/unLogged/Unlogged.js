@@ -11,8 +11,8 @@ const Unlogged = props => {
   const logInHandler = props.logInHandler;
 
   return (
-    <div className="modal-container">
-      <div className="modal roundy">
+    <div className="panel-login">
+      <div className="cards-wrapper roundy">
         <ul className="cards-list dropdown">
           <li className={`card roundy ${!activeTab ? "active" : ""}`}>
             <button

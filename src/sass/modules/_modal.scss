@@ -1,19 +1,11 @@
-.modal-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .roundy {
-    border-radius: $rounded;
-    @media (min-width: $breakpoint-small) {
-      border-radius: 5px;
-    }
+.roundy {
+  border-radius: $rounded;
+  @media (min-width: $breakpoint-small) {
+    border-radius: 5px;
   }
 }
 
-.modal {
+.cards-wrapper {
   height: 600px;
   width: 300px;
   background-color: $color-primary-dark;

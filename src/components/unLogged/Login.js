@@ -33,7 +33,7 @@ const Login = props => {
     if (await checkedObj) {
       let accountToLogIn = await checkPassword(checkedObj, password);
       if (accountToLogIn) {
-        loginEmmiter();
+        loginEmmiter(checkedObj);
         return accountToLogIn;
       }
     }

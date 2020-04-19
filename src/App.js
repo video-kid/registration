@@ -7,12 +7,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLogged: true
+      isLogged: false,
+      userData: {}
     };
   }
   render() {
-    const logInHandler = () => {
+    const logInHandler = accountData => {
       this.setState({ isLogged: true });
+      this.setState({ userData: accountData });
     };
     const logOutHandler = () => {
       this.setState({ isLogged: false });
@@ -26,6 +28,7 @@ class App extends React.Component {
                 isLogged={this.state.isLogged}
                 logInHandler={logInHandler}
                 logOutHandler={logOutHandler}
+                userData={this.state.userData}
               />
             </Route>
           </Switch>

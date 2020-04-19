@@ -3,7 +3,8 @@ const Data = {
     url: "http://localhost:5500/src/db",
     structure: {
       users: "users.json",
-      passwords: "passwords.json"
+      passwords: "passwords.json",
+      admins: "admins.json"
     },
     getTable: async function(table) {
       return await `${this.url}/${this.structure[table]}`;

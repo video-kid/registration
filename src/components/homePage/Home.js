@@ -7,10 +7,15 @@ const Home = props => {
   const isLogged = props.isLogged;
   const logInHandler = props.logInHandler;
   const logOutHandler = props.logOutHandler;
+  const userData = props.userData;
   return (
     <>
       <Header isLogged={isLogged} logOutHandler={logOutHandler} />
-      {isLogged ? <Panel /> : <Unlogged logInHandler={logInHandler} />}
+      {isLogged ? (
+        <Panel userData={userData} />
+      ) : (
+        <Unlogged logInHandler={logInHandler} />
+      )}
     </>
   );
 };
