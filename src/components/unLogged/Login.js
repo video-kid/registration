@@ -4,6 +4,7 @@ import Data from "../dbHandler/dbHandler.js";
 const Login = props => {
   let classList = `${props.className}`;
   const loginEmmiter = props.logInHandler;
+  const setAdminView = props.setAdminView;
 
   const [error, setError] = React.useState(null);
   const [form, setForm] = React.useState({
@@ -25,6 +26,21 @@ const Login = props => {
     }
   };
 
+  const checkAccountType = async (account, type) => {
+    let curAccount = await Data.findMatches(
+      await Data.useTable("admins"),
+      "id",
+      await Data.findUserId(account)
+    );
+
+    if (
+      (await curAccount[0]) !== undefined &&
+      (await curAccount[0][type]) === true
+    ) {
+      return setAdminView(curAccount[0][type]);
+    }
+  };
+
   const loginHandler = async (login, password) => {
     let checkedObj = await Data.getFirst(
       await Data.findMatches(await Data.useTable("users"), "login", login)
@@ -32,8 +48,11 @@ const Login = props => {
 
     if (await checkedObj) {
       let accountToLogIn = await checkPassword(checkedObj, password);
+
       if (accountToLogIn) {
         loginEmmiter(checkedObj);
+        checkAccountType(checkedObj, "admin");
+
         return accountToLogIn;
       }
     }

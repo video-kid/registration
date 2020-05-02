@@ -22,8 +22,8 @@ class App extends React.Component {
       this.setState({ isAdmin: false });
       this.setState({ userData: {} });
     };
-    const setAdminView = () => {
-      this.setState({ isAdmin: true });
+    const setAdminView = status => {
+      this.setState({ isAdmin: status });
     };
     return (
       <Router>

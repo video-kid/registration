@@ -9,6 +9,7 @@ const Unlogged = props => {
     setActiveTab(!activeTab);
   };
   const logInHandler = props.logInHandler;
+  const setAdminView = props.setAdminView;
 
   return (
     <div className="panel-login">
@@ -39,6 +40,7 @@ const Unlogged = props => {
               className="content"
               type="login"
               logInHandler={logInHandler}
+              setAdminView={setAdminView}
             ></Login>
           </li>
         </ul>

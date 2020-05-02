@@ -18,14 +18,11 @@ const Home = props => {
         logOutHandler={logOutHandler}
         userName={login}
       />
+
       {isLogged ? (
-        <Panel
-          userData={userData}
-          setAdminView={setAdminView}
-          isAdmin={isAdmin}
-        />
+        <Panel userData={userData} isAdmin={isAdmin} />
       ) : (
-        <Unlogged logInHandler={logInHandler} />
+        <Unlogged logInHandler={logInHandler} setAdminView={setAdminView} />
       )}
     </>
   );
